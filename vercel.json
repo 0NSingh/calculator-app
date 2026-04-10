@@ -1,3 +1,8 @@
 {
-  "framework": "nextjs"
+  "builds": [
+    {
+      "src": "frontend",
+      "use": "@vercel/next"
+    }
+  ]
 }

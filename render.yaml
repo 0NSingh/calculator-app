@@ -9,13 +9,5 @@ services:
       - key: PYTHON_VERSION
         value: "3.13"
       - key: DATABASE_URL
-        fromDatabase:
-          name: calculator-db
-          property: connectionString
-    repo: https://github.com/0NSingh/calculator-app.git
-
-  - type: pserv
-    name: calculator-db
-    plan: free
-    rootDir: .
+        sync: false
     repo: https://github.com/0NSingh/calculator-app.git

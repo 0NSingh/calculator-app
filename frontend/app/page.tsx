@@ -50,7 +50,8 @@ const Home = () => {
         return;
       }
       
-      const response = await fetch("http://localhost:8000/api/v1/user/me", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const response = await fetch(`${apiUrl}/api/v1/user/me`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (response.ok) {

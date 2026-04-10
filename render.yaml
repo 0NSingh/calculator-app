@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: calculator-backend
+    runtime: python
+    buildCommand: cd backend && pip install -e . && pytest
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13"
+      - key: DATABASE_URL
+        value: sqlite:///./sql_app.db
+    repo: https://github.com/0NSingh/calculator-app.git

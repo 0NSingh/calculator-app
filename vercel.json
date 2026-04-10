@@ -2,6 +2,6 @@
   "buildCommand": "npm run test:frontend && npm run test:backend && npm run build:frontend",
   "outputDirectory": "frontend/.next",
   "framework": "nextjs",
-  "installCommand": "cd frontend && npm install && cd ../backend && pip install -e .",
-  "postInstallCommand": "cd backend && uv pip install -e ."
+  "installCommand": "npm install",
+  "postInstallCommand": "pip install -e ./backend"
 }

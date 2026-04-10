@@ -7,12 +7,14 @@ SQLALCHEMY_DATABASE_URL = os.getenv(
     "postgresql://postgres:postgres@localhost:5432/calculator"
 )
 
+if not SQLALCHEMY_DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable is not set")
+
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 
-Base = declarative_base()
 
 def get_db():
     db = SessionLocal()

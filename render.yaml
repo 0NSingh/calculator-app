@@ -9,7 +9,9 @@ services:
       - key: PYTHON_VERSION
         value: "3.13"
       - key: DATABASE_URL
-        value: ${postgres.PG_URL}
+        fromDatabase:
+          name: calculator-db
+          property: connectionString
     repo: https://github.com/0NSingh/calculator-app.git
 
   - type: pserv

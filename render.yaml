@@ -2,8 +2,9 @@ services:
   - type: web
     name: calculator-backend
     runtime: python
-    buildCommand: cd backend && pip install -e . && pytest
-    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    rootDir: backend
+    buildCommand: pip install -e . && pytest
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: "3.13"
@@ -14,4 +15,5 @@ services:
   - type: pserv
     name: calculator-db
     plan: free
+    rootDir: .
     repo: https://github.com/0NSingh/calculator-app.git

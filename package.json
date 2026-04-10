@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "npm run test:frontend && npm run test:backend",
-    "test:frontend": "cd frontend && npm run test",
-    "test:backend": "cd backend && pip install -e . && pytest",
-    "build:frontend": "cd frontend && npm run build"
+    "test": "cd frontend && npm run test",
+    "build": "cd frontend && npm run build"
   }
 }

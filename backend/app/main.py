@@ -1,16 +1,20 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .auth import auth_router
 from .user import user_router
 from .calculator import cal_router
 from .health import health_router
-from db.config.database import engine, Base
 
-# Create database tables
 
-Base.metadata.create_all(bind=engine)
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    from db.config.database import engine, Base
+    Base.metadata.create_all(bind=engine)
+    yield
 
-app = FastAPI(title="Calculator API")
+
+app = FastAPI(title="Calculator API", lifespan=lifespan)
 
 # Configure CORS
 app.add_middleware(

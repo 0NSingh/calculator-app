@@ -19,5 +19,6 @@ dependencies = [
 [tool.fastapi]
 entrypoint = "app.main:app"
 
-[tool.setuptools]
-find = {}
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*", "db*"]

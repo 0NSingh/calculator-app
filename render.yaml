@@ -8,5 +8,10 @@ services:
       - key: PYTHON_VERSION
         value: "3.13"
       - key: DATABASE_URL
-        value: sqlite:///./sql_app.db
+        value: ${postgres.PG_URL}
+    repo: https://github.com/0NSingh/calculator-app.git
+
+  - type: pserv
+    name: calculator-db
+    plan: free
     repo: https://github.com/0NSingh/calculator-app.git

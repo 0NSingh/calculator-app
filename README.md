@@ -24,6 +24,6 @@ npm run dev
 ### Backend
 ```bash
 cd backend
-uv pip install -e .
+pip install -e .
 uvicorn app.main:app --reload
 ```

@@ -1,7 +1,0 @@
-{
-  "buildCommand": "npm run test:frontend && npm run test:backend && npm run build:frontend",
-  "outputDirectory": "frontend/.next",
-  "framework": "nextjs",
-  "installCommand": "npm install",
-  "postInstallCommand": "pip install -e ./backend"
-}

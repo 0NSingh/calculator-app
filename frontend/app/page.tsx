@@ -445,15 +445,29 @@ const Home = () => {
               </span>
             )}
 
-            <Link 
-              href="/user/profile"
-              className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs sm:text-sm mt-1 sm:mt-2"
-            >
-              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#ff9f0a] flex items-center justify-center text-white text-xs sm:text-sm font-bold">
-                {username ? username[0].toUpperCase() : "U"}
-              </div>
-              <span className="font-medium hidden sm:inline">{username || "Profile"}</span>
-            </Link>
+            <div className="flex items-center gap-3 mt-1 sm:mt-2">
+              <Link 
+                href="/user/signin"
+                className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs sm:text-sm"
+              >
+                Sign In
+              </Link>
+              <Link 
+                href="/user/signup"
+                className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs sm:text-sm"
+              >
+                Sign Up
+              </Link>
+              <Link 
+                href="/user/profile"
+                className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs sm:text-sm"
+              >
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#ff9f0a] flex items-center justify-center text-white text-xs sm:text-sm font-bold">
+                  {username ? username[0].toUpperCase() : "U"}
+                </div>
+                <span className="font-medium hidden sm:inline">{username || "Profile"}</span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

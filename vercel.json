@@ -1,4 +1,10 @@
 {
-  "framework": "nextjs",
-  "buildCommand": "cd frontend && npm install && npm run test && npm run build"
+  "builds": [
+    {
+      "src": "frontend",
+      "use": "@vercel/next"
+    }
+  ],
+  "buildCommand": "npm install && npm run test && npm run build",
+  "installCommand": "npm install"
 }

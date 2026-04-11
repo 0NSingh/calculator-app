@@ -446,18 +446,22 @@ const Home = () => {
             )}
 
             <div className="flex items-center gap-3 mt-1 sm:mt-2">
-              <Link 
-                href="/user/signin"
-                className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs sm:text-sm"
-              >
-                Sign In
-              </Link>
-              <Link 
-                href="/user/signup"
-                className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs sm:text-sm"
-              >
-                Sign Up
-              </Link>
+              {!username && (
+                <>
+                  <Link 
+                    href="/user/signin"
+                    className="px-3 py-2 bg-[#ff9f0a] text-white rounded-xl font-semibold text-xs sm:text-sm hover:bg-[#ffb447] transition-colors"
+                  >
+                    Login
+                  </Link>
+                  <Link 
+                    href="/user/signup"
+                    className="text-gray-500 hover:text-white transition-colors text-xs sm:text-sm"
+                  >
+                    Sign Up
+                  </Link>
+                </>
+              )}
               <Link 
                 href="/user/profile"
                 className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-xs sm:text-sm"

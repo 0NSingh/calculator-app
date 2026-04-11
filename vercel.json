@@ -6,5 +6,5 @@
     }
   ],
   "buildCommand": "([ \"$(pwd)\" = \"frontend\" ] && npm install && npm run build) || (cd frontend && npm install && npm run build)",
-  "outputDirectory": "frontend/.next"
+  "outputDirectory": ".next"
 }

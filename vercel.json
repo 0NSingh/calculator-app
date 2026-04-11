@@ -5,6 +5,5 @@
       "use": "@vercel/next"
     }
   ],
-  "buildCommand": "([ \"$(pwd)\" = \"frontend\" ] && npm install && npm run build) || (cd frontend && npm install && npm run build)",
-  "outputDirectory": ".next"
+  "buildCommand": "([ \"$(pwd)\" = \"frontend\" ] && npm install && npm run build) || (cd frontend && npm install && npm run build) && (echo \"pwd:$(pwd)\" && echo \"ls -la .next\")"
 }

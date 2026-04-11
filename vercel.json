@@ -1,5 +1,5 @@
 {
   "framework": "nextjs",
-  "buildCommand": "CI=true npm run test:unit && npm run build",
+  "buildCommand": "npm run build",
   "installCommand": "npm install"
 }

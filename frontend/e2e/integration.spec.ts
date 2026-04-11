@@ -1,6 +1,6 @@
 import { test, expect, Page } from '@playwright/test';
 
-const API_BASE = 'http://localhost:8000/api/v1';
+const API_BASE = process.env.TEST_API_URL || 'http://localhost:8000/api/v1';
 const generateEmail = () => `e2e_${Date.now()}@test.com`;
 
 async function createUserAndLogin(page: Page, email: string, username: string) {
